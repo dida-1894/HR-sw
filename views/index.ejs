@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalabe=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css"> -->
+  <link rel="stylesheet" href="stylesheets/swiper-4.1.6.min.css">
+  <link rel="stylesheet" href="stylesheets/animate.min.css">
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <title>rixin_hr</title>
+</head>
+
+<body>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide slide1">
+        <div class="signUp more"></div>
+        <img src="./images/slide1-2-min.jpg" class="ani img-responsives" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s" alt="">
+        <p class="ani" swiper-animate-effect="pulse" swiper-animate-duration="1s" swiper-animate-delay="0.3s">技术研发</p>
+        <p class="ani intro" swiper-animate-effect="rubberBand" swiper-animate-duration="0.5s" swiper-animate-delay="0.4s">技术研发中心包含网建部、移动开发部、设计部和产品部，这里是程序猿、产品狗和设计狮撕逼圣地，让我们一起Coding吧</p>
+      </div>
+      <div class="swiper-slide slide2">
+        <div class="signUp more"></div>
+        <img src="./images/slide2-1-min.jpg" class="ani img-responsives" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s" alt="">
+        <p class="ani" swiper-animate-effect="pulse" swiper-animate-duration="1s" swiper-animate-delay="0.3s">技术研发</p>
+        <p class="ani intro" swiper-animate-effect="rubberBand" swiper-animate-duration="0.5s" swiper-animate-delay="0.4s">技术研发中心包含网建部、移动开发部、设计部和产品部，这里是程序猿、产品狗和设计狮撕逼圣地，让我们一起Coding吧</p>
+      </div>
+      <div class="swiper-slide slide3">
+        <div class="signUp more"></div>
+        <img src="./images/slide3-1-min.jpg" class="ani img-responsives" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s" alt="">
+        <p class="ani" swiper-animate-effect="pulse" swiper-animate-duration="1s" swiper-animate-delay="0.3s">技术研发</p>
+        <p class="ani intro" swiper-animate-effect="rubberBand" swiper-animate-duration="0.5s" swiper-animate-delay="0.4s">技术研发中心包含网建部、移动开发部、设计部和产品部，这里是程序猿、产品狗和设计狮撕逼圣地，让我们一起Coding吧</p>
+      </div>
+      <div class="swiper-slide slide4">
+        <div class="signUp more"></div>
+        <img src="./images/slide4-1-min.jpg" class="ani img-responsives" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s" alt="">
+        <p class="ani" swiper-animate-effect="pulse" swiper-animate-duration="1s" swiper-animate-delay="0.3s">技术研发</p>
+        <p class="ani intro" swiper-animate-effect="rubberBand" swiper-animate-duration="0.5s" swiper-animate-delay="0.4s">技术研发中心包含网建部、移动开发部、设计部和产品部，这里是程序猿、产品狗和设计狮撕逼圣地，让我们一起Coding吧</p>
+      </div>
+      <div class="swiper-slide slide5">
+        <form class="" action="?" method="post">
+          <h6>name</h6>
+          <input type="text" name="name" value="Alison">
+          <h6>phone number</h6>
+          <input type="text" name="PhoneNumber" value="123456">
+          <h6>college</h6>
+          <input type="text" name="College" value="c&S">
+          <h6>career center</h6>
+          <input type="text" name="CareerCenter" value="lllll">
+          <h6>department</h6>
+          <input type="text" name="Department" value="llllll">
+          <button type="submit" name="button">OK</button>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script> -->
+  <script src="javascripts/swiper-4.1.6.min.js" charset="utf-8"></script>
+  <script src="javascripts/swiper.animate1.0.3.min.js" charset="utf-8"></script>
+  <script src="javascripts/jquery.min.js" charset="utf-8"></script>
+  <script>
+    $(document).ready(function() {
+      $(".signUp").click(function() {
+        $(".sign").addClass("signdown");
+      });
+      var mySwiper = new Swiper('.swiper-container', {
+        direction: 'horizontal',
+        loop: true,
+        on: {
+          init: function() {
+            swiperAnimateCache(this); //隐藏动画元素
+            swiperAnimate(this); //初始化完成开始动画
+          },
+          slideChangeTransitionEnd: function() {
+            swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+          }
+        },
+
+      });
+      var lastTouchEnd = 0;
+      document.documentElement.addEventListener('touchend', function(event) {
+        var now = Date.now();
+        if (now - lastTouchEnd <= 300) {
+          event.preventDefault();
+        }
+        lastTouchEnd = now;
+      }, false);
+    })
+  </script>
+</body>
+
+</html>
